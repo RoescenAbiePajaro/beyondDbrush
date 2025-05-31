@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="folio.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/gif" href="favicon.gif">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <title>My Portfolio</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Smooth Scroll Function
+            document.querySelectorAll("nav ul li a").forEach(anchor => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 70,  // Adjust to avoid header overlay
+                        behavior: "smooth"
+                    });
+                });
+            });
+
+            // Scroll Animation
+            const sections = document.querySelectorAll(".section");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section (Image & Name) -->
+    <section class="section home" id="home">
+        <div class="profile-container">
+            <img class="imagess" src="abie.png" alt="Roescen Abie S. Pajaro">
+            <p class="name">Roescen Abie S. Pajaro</p>
+            <p class="school">From Gordon College</p>
+        </div>
+    </section>
+
+     <!-- About Me Section -->
+     <section class="section" id="about">
+        <h2 class="aboutme">About Me</h2>
+        <div class="about-container">
+            <div class="about-box">
+                <h3>01</h3>
+                <h4>What Is My Passion</h4>
+                <p>I'm passionate about graphic design and on a journey to learn more about the art of visual storytelling. I believe that good design can make the world a more beautiful, functional, and meaningful place.</p>
+            </div>
+
+            <div class="about-box">
+                <h3>02</h3>
+                <h4>The Interest</h4>
+                <p>My interest in design started when I realized how much visual elements can influence emotions and convey messages without words. Since then, I've been diving into design principles, experimenting with different styles, and exploring new tools to enhance my skills.</p>
+            </div>
+
+            <div class="about-box">
+                <h3>03</h3>
+                <h4>My Goal</h4>
+                <p>My goal is to become a professional graphic designer, working on projects that not only look good but also solve real problems and resonate with audiences.</p>
+            </div>
+        </div>
+    </section>
+
+     <!-- Projects Section -->
+     <section class="section" id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <img class="project-logo" src="assets/shopping-cart.png" alt="Ecommerce Logo">
+                <h3 class="ecomm">Ecommerce Shop</h3>
+                <p class="description">This eCommerce website is a dynamic and user-friendly platform built using Angular for the front-end, XAMPP (PHP & MySQL) for the back-end, and Postman for API testing. The system provides a seamless shopping experience with essential eCommerce functionalities.</p>
+            </div>
+
+            <div class="project">
+                <img class="project-logo" src="assets/education.png" alt="Student Management Logo">
+                <h3>Student Management System</h3>
+                <p  class="description"> is a software application designed to efficiently manage student data, including enrollment, attendance, grades, and personal details. It allows administrators, teachers, and students to access and update information, streamlining academic and administrative processes. Features may include course management, report generation, fee tracking, and communication tools.</p>
+            </div>
+
+            <div class="project">
+                <img class="project-logo" src="assets/clerk.png" alt="Student Management Logo">
+                <h3>POS and Inventory System</h3>
+                <p class="description"> is a software solution designed to streamline sales transactions and manage stock levels efficiently. The system allows businesses to process customer purchases, generate receipts, and track sales data in real-time. Integrated with an inventory management module, it helps monitor stock levels, automate restocking alerts, and prevent shortages or overstocking. Key features include barcode scanning, product categorization, sales reporting, user roles (cashier, admin, manager), and secure payment processing. This system enhances operational efficiency, reduces errors, and improves overall business management.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>Email: **********@gmail.com</p>
+        <p>Phone Number: +63 ***********</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio</p>
+    </footer>
+</body>
+</html>
