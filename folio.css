@@ -147,6 +147,18 @@ nav ul li a:hover {
     font-size: 16px;
 }
 
+/* Video Section */
+.video-container {
+    width: 60%; /* Medium size container */
+    max-width: 640px; /* Maximum width limit */
+    margin: 0 auto; /* Center the container */
+}
+
+.video-container video {
+    width: 100%; /* Make video fill the container */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
 footer {
     background: #422246;
     padding: 10px;
