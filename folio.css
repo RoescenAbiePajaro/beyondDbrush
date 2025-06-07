@@ -149,14 +149,20 @@ nav ul li a:hover {
 
 /* Video Section */
 .video-container {
-    width: 60%; /* Medium size container */
-    max-width: 640px; /* Maximum width limit */
-    margin: 0 auto; /* Center the container */
+    width: 80%; /* Increased from 60% to 80% */
+    max-width: 800px; /* Increased from 640px to 800px */
+    margin: 0 auto;
 }
 
 .video-container video {
     width: 100%; /* Make video fill the container */
     border-radius: 8px; /* Optional: rounded corners */
+}
+
+@media screen and (max-width: 768px) {
+    .video-container {
+        width: 95%; /* Increased from 90% to 95% */
+    }
 }
 
 footer {
@@ -180,4 +186,102 @@ footer {
 .download-link:hover {
     background-color: #ffffff;
     color: #000000;
+}
+
+/* Add responsive design */
+@media screen and (max-width: 768px) {
+    nav ul {
+        justify-content: center;
+        margin-right: 0;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .profile-container {
+        margin-top: 120px;
+    }
+    
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .about-box {
+        width: 80%;
+        max-width: 300px;
+        margin-bottom: 15px;
+    }
+    
+    .video-container {
+        width: 90%;
+    }
+    
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    nav ul li a {
+        font-size: 16px;
+    }
+    
+    .name {
+        font-size: 24px;
+    }
+    
+    .school {
+        font-size: 16px;
+    }
+    
+    .imagess {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Remove mobile menu styles */
+@media screen and (max-width: 768px) {
+    nav ul {
+        justify-content: center;
+        margin-right: 0;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .profile-container {
+        margin-top: 120px;
+    }
+    
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-box {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    
+    .video-container {
+        width: 90%;
+    }
+    
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project {
+        width: 90%;
+        margin-bottom: 20px;
+    }
 }
